@@ -1,0 +1,8 @@
+ja:
+  helpers:
+    submit:
+      create: 保存
+      update: 更新
+  simple_form:
+    required:
+      html: '<div class="d-inline-block bg-danger text-white rounded text-nowrap px-1 ms-2" style="font-size: 0.75rem;">必須</div>'
