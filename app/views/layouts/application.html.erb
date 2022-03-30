@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rails7BootstrapModal</title>
+    <title>ユーザー管理表</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid my-4" style="max-width: 1200px;">
+      <%= yield %>
+    </div>
   </body>
 </html>

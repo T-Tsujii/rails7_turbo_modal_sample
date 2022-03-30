@@ -1,0 +1,11 @@
+<h1>ユーザー管理表</h1>
+
+<div class="d-grid gap-2 my-4">
+  <%= link_to new_user_path, class: "btn btn-primary" do %>
+    <i class="bi bi-person-plus"></i> ユーザーを追加
+  <% end %>
+</div>
+
+<%= turbo_frame_tag "users" do %>
+  <%= render @users %>
+<% end %>

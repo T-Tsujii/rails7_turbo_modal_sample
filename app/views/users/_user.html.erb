@@ -1,0 +1,19 @@
+<%= turbo_frame_tag user do %>
+  <div class="card border-none my-2">
+    <div class="card-body rounded shadow-sm">
+      <div class="d-flex align-items-center">
+        <div>
+          <%= user.name %>
+        </div>
+        <div class="ms-3">
+          <%= user.email %>
+        </div>
+        <div class="ms-auto">
+          <%= link_to user, class: "btn btn-primary" do %>
+            <i class="bi bi-envelope-paper-fill"></i> <span>詳細</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
