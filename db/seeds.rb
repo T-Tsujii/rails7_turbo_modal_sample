@@ -1,4 +1,4 @@
-10.times do |i|
+100.times do |i|
   age = rand(1..100)
   User.create!(
     email: "test_#{i}@example.com",

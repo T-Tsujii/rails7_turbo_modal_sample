@@ -1,2 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+nav > ul {
+  margin-top: 2rem;
+  justify-content: center;
+}
