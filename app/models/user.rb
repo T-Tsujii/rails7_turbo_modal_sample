@@ -5,6 +5,11 @@ class User < ApplicationRecord
   end
 
   validates :tel, tel: true
+  validates :age, numericality: {
+    only_integer: true,
+    greater_than_or_equal_to: 0,
+    less_than_or_equal_to: 150
+  }
 
   enum gender: {
     male: 10,
