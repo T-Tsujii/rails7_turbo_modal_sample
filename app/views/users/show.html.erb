@@ -1,0 +1,59 @@
+<%= turbo_frame_tag "user-modal-content" do %>
+  <div class="modal-header">
+    <h5 class="modal-title" id="user-modal-label">詳細</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :name %>
+      </div>
+      <div class="col-md-8">
+        <%= @user.name %>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :email %>
+      </div>
+      <div class="col-md-8">
+        <%= @user.email %>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :gender %>
+      </div>
+      <div class="col-md-8">
+        <%= @user.gender_i18n %>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :age %>
+      </div>
+      <div class="col-md-8">
+        <%= @user.age %> 歳
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :tel %>
+      </div>
+      <div class="col-md-8">
+        <%= @user.tel %>
+      </div>
+    </div>
+    <div class="row my-2">
+      <div class="col-md-4 fw-bold">
+        <%= User.human_attribute_name :birth_date %>
+      </div>
+      <div class="col-md-8">
+        <%= l @user.birth_date if @user.birth_date.present? %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+  </div>
+<% end %>
