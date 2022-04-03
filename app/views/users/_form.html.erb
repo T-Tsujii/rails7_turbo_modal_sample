@@ -1,7 +1,7 @@
 <%= turbo_frame_tag "user-modal-content" do %>
   <%= simple_form_for @user do |f| %>
     <div class="modal-header">
-      <h5 class="modal-title" id="user-modal-label">新規投稿</h5>
+      <h5 class="modal-title" id="user-modal-label"><%= @user.new_record? ? "新規投稿" : "編集" %></h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">

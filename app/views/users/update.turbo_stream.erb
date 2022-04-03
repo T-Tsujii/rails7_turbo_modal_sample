@@ -1,0 +1,7 @@
+<%= turbo_stream.replace @user do %>
+  <%= render @user %>
+<% end %>
+
+<%= turbo_stream.update "user-modal-content" do %>
+  <%= render "show" %>
+<% end %>
