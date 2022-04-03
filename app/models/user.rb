@@ -9,7 +9,7 @@ class User < ApplicationRecord
     only_integer: true,
     greater_than_or_equal_to: 0,
     less_than_or_equal_to: 150
-  }
+  }, allow_nil: true
 
   enum gender: {
     male: 10,

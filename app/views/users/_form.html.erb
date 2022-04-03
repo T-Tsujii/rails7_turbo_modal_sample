@@ -1,0 +1,20 @@
+<%= turbo_frame_tag "user-modal-content" do %>
+  <%= simple_form_for @user do |f| %>
+    <div class="modal-header">
+      <h5 class="modal-title" id="user-modal-label">新規投稿</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :gender, include_blank: t('helpers.select.prompt') %>
+      <%= f.input :age %>
+      <%= f.input :tel %>
+      <%= f.input :birth_date, html5: true %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= turbo_stream.update "users" do %>
+  <%= render @users %>
+  <%= paginate @users %>
+<% end %>
+
+<%= turbo_stream.update "user-modal-content" do %>
+  <%= render "show" %>
+<% end %>

@@ -330,13 +330,12 @@ SimpleForm.setup do |config|
   # floating labels default_wrapper
   config.wrappers :floating_labels_form, class: 'form-floating mb-3' do |b|
     b.use :html5
-    b.use :placeholder
     b.optional :maxlength
     b.optional :minlength
     b.optional :pattern
     b.optional :min_max
     b.optional :readonly
-    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid'
+    b.use :input, class: 'form-control', error_class: 'is-invalid', valid_class: 'is-valid', placeholder: 'placeholder'
     b.use :label
     b.use :full_error, wrap_with: { class: 'invalid-feedback' }
     b.use :hint, wrap_with: { class: 'form-text' }
@@ -361,7 +360,7 @@ SimpleForm.setup do |config|
   config.wrapper_mappings = {
     boolean:       :vertical_boolean,
     check_boxes:   :vertical_collection,
-    date:          :vertical_multi_select,
+    date:          :floating_labels_form,
     datetime:      :vertical_multi_select,
     file:          :vertical_file,
     radio_buttons: :vertical_collection,

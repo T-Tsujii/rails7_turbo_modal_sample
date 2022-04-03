@@ -12,7 +12,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    render :new, status: :unprocessable_entity unless @user.save
+    if @user.save
+      # 一覧表示は 1ページ目 に戻す
+      @users = User.order(created_at: :desc).page(nil).per(PER_PAGE)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show; end
