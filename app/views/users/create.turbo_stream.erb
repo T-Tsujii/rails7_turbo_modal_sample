@@ -6,3 +6,7 @@
 <%= turbo_stream.update "user-modal-content" do %>
   <%= render "show" %>
 <% end %>
+
+<%= turbo_stream.replace "flash" do %>
+  <%= render "partials/flash" %>
+<% end %>

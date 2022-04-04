@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       # 一覧表示は 1ページ目 に戻す
       @users = User.order(created_at: :desc).page(nil).per(PER_PAGE)
+      flash.now[:notice] = "作成しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,13 +26,18 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    render :edit, status: :unprocessable_entity unless @user.update(user_params)
+    if @user.update(user_params)
+      flash.now[:notice] = "更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @user.destroy
     # 削除後は現在のページの一覧表示を置き換えたいのでデータを取得
     @users = User.order(created_at: :desc).page(params[:page]).per(PER_PAGE)
+    flash.now[:alert] = "削除しました"
   end
 
   private

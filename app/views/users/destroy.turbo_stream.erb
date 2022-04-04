@@ -3,3 +3,7 @@
   <%# NOTE: action を指定しないと, show アクションへのリンクになる %>
   <%= paginate @users, params: {action: 'index'} %>
 <% end %>
+
+<%= turbo_stream.replace "flash" do %>
+  <%= render "partials/flash" %>
+<% end %>

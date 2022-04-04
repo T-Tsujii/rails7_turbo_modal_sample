@@ -1,5 +1,6 @@
 <h1>ユーザー管理表</h1>
 <%= render "modal" %>
+
 <%= link_to new_user_path, data: { turbo_frame: "user-modal-content" } do %>
   <div class="d-grid gap-2 my-4">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#user-modal">
@@ -11,3 +12,4 @@
   <%= render @users %>
   <%= paginate @users %>
 <% end %>
+
