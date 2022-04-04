@@ -30,6 +30,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
+    # 削除後は現在のページの一覧表示を置き換えたいのでデータを取得
+    @users = User.order(created_at: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   private

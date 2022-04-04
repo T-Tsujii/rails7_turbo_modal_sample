@@ -10,6 +10,8 @@ ja:
         age: 年齢
         tel: 電話番号
         birth_date: 生年月日
+  actions:
+    confirm: 本当によろしいですか？
   enums:
     user:
       gender:

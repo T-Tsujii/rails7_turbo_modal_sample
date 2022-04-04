@@ -11,7 +11,9 @@
         <div class="ms-auto">
           <%# 他の turbo_frame_tag を置き換えたい時は data-turbo-frame を明示する %>
           <%# user-modal-content に対応するモーダルの中身を show.html.erb の turbo_frame_tag と置き換える %>
-          <%= link_to user, data: { turbo_frame: "user-modal-content" } do %>
+
+          <%# 削除ボタンに「現在開いているページ」の情報を渡すためにクエリパラメータを追加 %>
+          <%= link_to user_path(user, page: params[:page]), data: { turbo_frame: "user-modal-content" } do %>
             <%# Bootstrap のモーダルを開くボタン %>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#user-modal">
               <i class="bi bi-envelope-paper-fill"></i> <span>詳細</span>
