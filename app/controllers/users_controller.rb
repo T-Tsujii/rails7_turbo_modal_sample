@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_turbo_frame_request, only: [:new, :edit]
   PER_PAGE = 10
 
   def index
@@ -48,5 +49,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :name, :gender, :age, :tel, :birth_date)
+  end
+
+  def ensure_turbo_frame_request
+    redirect_to posts_url unless turbo_frame_request?
   end
 end

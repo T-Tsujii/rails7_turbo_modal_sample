@@ -1,24 +1,22 @@
-# README
+# Turboを利用した投稿アプリ（モーダル版）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+JSは1行も書いていません。
 
-Things you may want to cover:
+## 新規作成
 
-* Ruby version
+- 1ページ目の一番上に追加
+  - 他のページの場合は1ページ目に移動
 
-* System dependencies
+![bootstrap-modal-create](https://user-images.githubusercontent.com/52148373/161655440-425b3d18-e7cf-4aa9-ace4-ef121aba436f.gif)
 
-* Configuration
+## 編集
 
-* Database creation
+- 一覧の該当ユーザーのみ更新
 
-* Database initialization
+![bootstrap-modal-edit](https://user-images.githubusercontent.com/52148373/161655457-f9f0a78a-d642-490b-bd9a-e86ea80c4647.gif)
 
-* How to run the test suite
+## 削除
 
-* Services (job queues, cache servers, search engines, etc.)
+- 表示ページを再描画
 
-* Deployment instructions
-
-* ...
+![bootstrap-modal-delete](https://user-images.githubusercontent.com/52148373/161655459-7bbd35cc-b09a-4ab2-b02d-60dc5a107b1a.gif)
