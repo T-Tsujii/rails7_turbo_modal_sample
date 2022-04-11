@@ -3,10 +3,5 @@
   <%= paginate @users %>
 <% end %>
 
-<%= turbo_stream.update "user-modal-content" do %>
-  <%= render "show" %>
-<% end %>
-
-<%= turbo_stream.replace "flash" do %>
-  <%= render "partials/flash" %>
-<% end %>
+<%= turbo_stream.update "user-modal-content", partial: "show" %>
+<%= turbo_stream.replace "flash", partial: "partials/flash" %>

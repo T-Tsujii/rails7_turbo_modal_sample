@@ -4,6 +4,4 @@
   <%= paginate @users, params: {action: 'index'} %>
 <% end %>
 
-<%= turbo_stream.replace "flash" do %>
-  <%= render "partials/flash" %>
-<% end %>
+<%= turbo_stream.replace "flash", partial: "partials/flash" %>
